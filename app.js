@@ -4,6 +4,7 @@ const app = express()
 const port = 3000
 // require express-handlebars here
 const exphbs = require('express-handlebars')
+const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 // const restaurantList = require('./restaurant.json')
 const Restaurant = require('./models/restaurant.js')
@@ -11,7 +12,8 @@ const Restaurant = require('./models/restaurant.js')
 // setting template engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
-
+// setting bodyParser
+app.use(bodyParser.urlencoded({ extended: true }))
 // setting static files
 app.use(express.static('public'))
 
@@ -38,18 +40,34 @@ app.get('/restaurants', (req, res) => {
   res.redirect('/')
 })
 
-app.get('/restaurants/:restaurant_id', (req, res) => {
-  const restaurant = restaurantList.results.find(
-    restaurant => restaurant.id.toString() === req.params.restaurant_id
-  )
-  res.render('show', { restaurant: restaurant })
-})
-
 app.get('/restaurants/new', (req, res) => {
-  res.send('新增restaurant頁面')
+  return res.render('new')
 })
 app.post('/restaurants', (req, res) => {
-  res.send('新增restaurant頁面')
+  console.log('req.body', req.body)
+  const restaurant = new Restaurant({
+    name: req.body.name,
+    name_en: req.body.name_en,
+    category: req.body.category,
+    image: req.body.image,
+    location: req.body.location,
+    phone: req.body.phone,
+    google_map: req.body.google_map,
+    rating: req.body.rating,
+    description: req.body.description
+  })
+  restaurant.save(err => {
+    if (err) return console.error(err)
+    return res.redirect('/')
+  })
+})
+
+app.get('/restaurants/:restaurant_id', (req, res) => {
+  Restaurant.findById(req.params.restaurant_id, (err, item) => {
+    if (err) return console.error(err)
+    // console.log('req.params.body', req.params.restaurant_id)
+    return res.render('show', { restaurant: item })
+  })
 })
 
 app.get('/restaurants/:restaurant_id/edit', (req, res) => {
