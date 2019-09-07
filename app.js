@@ -31,11 +31,33 @@ app.get('/', (req, res) => {
   res.render('index', { restaurant: restaurantList.results })
 })
 
+app.get('/restaurants', (req, res) => {
+  res.redirect('/')
+})
+
 app.get('/restaurants/:restaurant_id', (req, res) => {
   const restaurant = restaurantList.results.find(
     restaurant => restaurant.id.toString() === req.params.restaurant_id
   )
   res.render('show', { restaurant: restaurant })
+})
+
+app.get('/restaurants/new', (req, res) => {
+  res.send('新增restaurant頁面')
+})
+app.post('/restaurants', (req, res) => {
+  res.send('新增restaurant頁面')
+})
+
+app.get('/restaurants/:restaurant_id/edit', (req, res) => {
+  res.send('修改restaurant頁面')
+})
+app.get('/restaurants/:restaurant_id', (req, res) => {
+  res.send('修改restaurant')
+})
+
+app.post('/restaurants/:restaurant_id/delete', (req, res) => {
+  res.send('刪除restaurant')
 })
 
 app.get('/search', (req, res) => {
