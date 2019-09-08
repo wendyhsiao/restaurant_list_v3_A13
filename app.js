@@ -7,7 +7,8 @@ const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
-// const restaurantList = require('./restaurant.json')
+const Handlebars = require('handlebars')
+
 const Restaurant = require('./models/restaurant.js')
 
 // setting template engine
