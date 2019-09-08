@@ -4,7 +4,7 @@
     <div class="col-12 col-md-10 mx-auto">
       <a href="/" class="btn btn-secondary btn-sm col-left">Back</a>
 
-      <form action="/restaurants/{{{restaurant.id}}}/delete" class="col-right">
+      <form action="/restaurants/{{{restaurant.id}}}/delete?_method=DELETE" method="POST" class="col-right">
         <a href="/restaurants/{{{restaurant.id}}}/edit" class="btn btn-primary btn-sm">Edit</a>
         <button type="submit" class="btn btn-danger btn-sm ">Delete</button>
       </form>
