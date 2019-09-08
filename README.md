@@ -22,7 +22,7 @@
 在終端機(Terminal)輸入
 
 ```
-git colone https://github.com/wendyhsiao/restaurant_list_v1(A9).git
+git colone https://github.com/wendyhsiao/restaurant_list_v1_A9.git
 ```
 
 如果在終端機訊息中看見「done」，就表示成功了！
@@ -33,10 +33,10 @@ git colone https://github.com/wendyhsiao/restaurant_list_v1(A9).git
 
 #### 執行步驟
 
-1.在終端機(Terminal)切換到 restaurant_list_v1(A9) 目錄下
+1.在終端機(Terminal)切換到 restaurant_list_v1_A9 目錄下
 
 ```
-cd restaurant_list_v1(A9)
+cd restaurant_list_v1_A9
 ```
 
 2.安裝套件
@@ -55,16 +55,20 @@ nodemon app.js
 
 ## 功能描述
 
-- 可選擇工程師、設計師或創業家其中一個對象
-- 點選【產生幹話】按鈕
-- 將隨機產生一句對應此職業的幹話內容
+- 在首頁列出所有的餐廳清單
+- 針對每間餐廳，使用者都可以點進去看詳細描述
+- 使用者可以透過搜尋餐廳名稱來找到特定的店家資料
+
+- 增加新增餐廳按鈕，可自行增加餐廳清單
+- 增加編輯按鈕，可修改餐廳資料內容
+- 增加刪除按鈕，可把不想要的餐廳刪除
 
 ## 專案畫面
 
-![image](<https://github.com/wendyhsiao/restaurant_list_v1(A9)/blob/master/public/img/index.PNG>)
+![image](https://github.com/wendyhsiao/restaurant_list_v1_A9/blob/master/public/img/index.PNG)
 
-![image](<https://github.com/wendyhsiao/restaurant_list_v1(A9)/blob/master/public/img/detail.PNG>)
+![image](https://github.com/wendyhsiao/restaurant_list_v1_A9/blob/master/public/img/detail.PNG)
 
-![image](<https://github.com/wendyhsiao/restaurant_list_v1(A9)/blob/master/public/img/edit.PNG>)
+![image](https://github.com/wendyhsiao/restaurant_list_v1_A9/blob/master/public/img/edit.PNG)
 
-![image](<https://github.com/wendyhsiao/restaurant_list_v1(A9)/blob/master/public/img/create.PNG>)
+![image](https://github.com/wendyhsiao/restaurant_list_v1_A9/blob/master/public/img/create.PNG)
