@@ -30,10 +30,12 @@ db.once('open', () => {
 
 // routes setting
 app.get('/', (req, res) => {
-  Restaurant.find((err, item) => {
-    if (err) return console.error(err)
-    return res.render('index', { restaurant: item })
-  })
+  Restaurant.find({})
+    .sort({ name: 'asc' })
+    .exec((err, item) => {
+      if (err) return console.error(err)
+      return res.render('index', { restaurant: item })
+    })
 })
 
 app.get('/restaurants', (req, res) => {
