@@ -1,83 +1,77 @@
 <h1 class="mb-1 restaurant-show-title">新增餐廳</h1>
 
 <div class="container mb-5">
-  <div class="row mx-auto">
-    <form action="/restaurants" method="POST" class="col-10 ">
+  <div class="row ">
+    <form action="/restaurants" method="POST" class="col-10 mx-auto">
 
-      <div class="input-group mb-3 ">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">餐廳名稱</span>
+      <div class="row">
+        <div class="input-group mb-3 col-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳名稱</span>
+          </div>
+          <input type="text" class="form-control" name="name" placeholder="name">
         </div>
-        <input type="text" class="form-control" name="name" placeholder="name">
+
+        <div class="input-group mb-3 col-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳英文</span>
+          </div>
+          <input type="text" class="form-control" name="name_en" placeholder="name_en">
+        </div>
+
+        <div class="input-group mb-3 col-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳類別</span>
+          </div>
+          <input type="text" class="form-control" name="category" placeholder="category">
+        </div>
+
+        <div class="input-group mb-3 col-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳電話</span>
+          </div>
+          <input type="text" class="form-control" name="phone" placeholder="phone">
+        </div>
+
+        <div class="input-group mb-3 col-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳評分</span>
+          </div>
+          <input type="number" min="1" max="5" step="0.5" class="form-control" name="rating" placeholder="rating (1-5)">
+        </div>
+
+        <div class="input-group mb-3 col-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳地點</span>
+          </div>
+          <input type="text" class="form-control" name="location" placeholder="location">
+        </div>
+
+        <div class="input-group mb-3 col-12">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳照片</span>
+          </div>
+          <input type="text" class="form-control" name="image" placeholder="image (http://)">
+        </div>
+
+        <div class="input-group mb-3 col-12">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳地圖</span>
+          </div>
+          <input type="text" class="form-control" name="google_map" placeholder="google_map">
+
+        </div>
+
+
+        <div class="input-group mb-3 col-12">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳介紹</span>
+          </div>
+          <textarea type="text" class="form-control " name="description" placeholder="description"></textarea>
+        </div>
       </div>
 
-      <div class="input-group mb-3 ">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">餐廳英文</span>
-        </div>
-        <input type="text" class="form-control" name="name_en" placeholder="name_en">
-
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">類別</span>
-        </div>
-        <input type="text" class="form-control" name="category" placeholder="category">
-
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">照片</span>
-        </div>
-        <input type="text" class="form-control" name="image" placeholder="image">
-
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">地點</span>
-        </div>
-        <input type="text" class="form-control" name="location" placeholder="location">
-
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">電話</span>
-        </div>
-        <input type="text" class="form-control" name="phone" placeholder="phone">
-
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">地圖</span>
-        </div>
-        <input type="text" class="form-control" name="google_map" placeholder="google_map">
-
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">評分</span>
-        </div>
-        <input type="text" class="form-control" name="rating" placeholder="rating">
-
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">介紹</span>
-        </div>
-        {{!-- <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-        aria-describedby="basic-addon1"> --}}
-        <textarea type="text" class="form-control " name="description" placeholder="description">
-      </textarea>
-      </div>
-
-      <button type="submit">Create</button>
+      <button type="submit" class="btn btn-success btn-sm">Create</button>
     </form>
   </div>
 </div>

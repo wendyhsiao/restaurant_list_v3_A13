@@ -51,6 +51,18 @@ header {
   color: white;
 }
 
+.col-right {
+  float: right;
+}
+.col-left {
+  float: left;
+}
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
 .form-control:focus {
   box-shadow: none;
   border-color: #ced4da;
@@ -82,6 +94,10 @@ header {
   text-align: center;
   font-size: 3rem;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+textarea {
+  min-height: 50px;
 }
 
 @media screen and (max-width: 992px) {

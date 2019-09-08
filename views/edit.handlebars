@@ -1,87 +1,80 @@
 <h1 class="mb-1 restaurant-show-title">{{{restaurant.name}}}</h1>
 
 <div class="container mb-5">
-  <div class="row mx-auto">
-    <form action="/restaurants/{{{restaurant.id}}}" method="POST" class="col-10 ">
+  <div class="row ">
+    <form action="/restaurants/{{{restaurant.id}}}" method="POST" class="col-10 mx-auto">
 
-      <div class="input-group mb-3 ">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">餐廳名稱</span>
+      <div class="row">
+        <div class="input-group mb-3 col-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳名稱</span>
+          </div>
+          <input type="text" class="form-control" name="name" value="{{{restaurant.name}}}" placeholder="name">
         </div>
-        <input type="text" class="form-control" name="name" value="{{{restaurant.name}}}" placeholder="name">
-      </div>
 
-      <div class="input-group mb-3 ">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">餐廳英文</span>
+        <div class="input-group mb-3 col-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳英文</span>
+          </div>
+          <input type="text" class="form-control" name="name_en" value="{{{restaurant.name_en}}}" placeholder="name_en">
         </div>
-        <input type="text" class="form-control" name="name_en" value="{{{restaurant.name_en}}}" placeholder="name_en">
 
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">類別</span>
+        <div class="input-group mb-3 col-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳類別</span>
+          </div>
+          <input type="text" class="form-control" name="category" value="{{{restaurant.category}}}"
+            placeholder="category">
         </div>
-        <input type="text" class="form-control" name="category" value="{{{restaurant.category}}}"
-          placeholder="category">
 
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">照片</span>
+        <div class="input-group mb-3 col-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳電話</span>
+          </div>
+          <input type="text" class="form-control" name="phone" value="{{{restaurant.phone}}}" placeholder="phone">
         </div>
-        <input type="text" class="form-control" name="image" value="{{{restaurant.image}}}" placeholder="image">
 
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">地點</span>
+        <div class="input-group mb-3 col-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳評分</span>
+          </div>
+          <input type="text" class="form-control" name="rating" value="{{{restaurant.rating}}}" placeholder="rating">
         </div>
-        <input type="text" class="form-control" name="location" value="{{{restaurant.location}}}"
-          placeholder="location">
 
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">電話</span>
+        <div class="input-group mb-3 col-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳地點</span>
+          </div>
+          <input type="text" class="form-control" name="location" value="{{{restaurant.location}}}"
+            placeholder="location">
         </div>
-        <input type="text" class="form-control" name="phone" value="{{{restaurant.phone}}}" placeholder="phone">
 
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">地圖</span>
+        <div class="input-group mb-3 col-12">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳照片</span>
+          </div>
+          <input type="text" class="form-control" name="image" value="{{{restaurant.image}}}" placeholder="image">
         </div>
-        <input type="text" class="form-control" name="google_map" value="{{{restaurant.google_map}}}"
-          placeholder="google_map">
 
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">評分</span>
+        <div class="input-group mb-3 col-12">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳地圖</span>
+          </div>
+          <input type="text" class="form-control" name="google_map" value="{{{restaurant.google_map}}}"
+            placeholder="google_map">
         </div>
-        <input type="text" class="form-control" name="rating" value="{{{restaurant.rating}}}" placeholder="rating">
 
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">介紹</span>
+        <div class="input-group mb-3 col-12">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">餐廳介紹</span>
+          </div>
+          <textarea type="text" class="form-control " name="description"
+            placeholder="description">{{{restaurant.description}}}</textarea>
         </div>
-        {{!-- <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-        aria-describedby="basic-addon1"> --}}
-        <textarea type="text" class="form-control " name="description" placeholder="description">{{{restaurant.description}}}
-      </textarea>
       </div>
 
       <button type="submit" class="btn btn-success btn-sm">Save</button>
-      <a href="/restaurants/{{{restaurant.id}}}" class=" btn btn-danger btn-sm">Cancel</a>
+      <a href="/restaurants/{{{restaurant.id}}}" class=" btn btn-secondary btn-sm">Cancel</a>
     </form>
   </div>
 </div>

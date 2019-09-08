@@ -49,7 +49,9 @@ app.post('/restaurants', (req, res) => {
     name: req.body.name,
     name_en: req.body.name_en,
     category: req.body.category,
-    image: req.body.image,
+    image: (req.body.image = '')
+      ? req.body.image
+      : 'https://www.hucc-coop.tw/dispPageBox/hucc/images/nopic_post.jpg?&W=870&H=580',
     location: req.body.location,
     phone: req.body.phone,
     google_map: req.body.google_map,

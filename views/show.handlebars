@@ -2,10 +2,15 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
-      <a href="/" class="btn btn-secondary btn-sm">Back</a>
-      <a href="/restaurants/{{{restaurant.id}}}/edit" class="btn btn-primary btn-sm">Edit</a>
+      <a href="/" class="btn btn-secondary btn-sm col-left">Back</a>
+
+      <form action="/restaurants/{{{restaurant.id}}}/delete" class="col-right">
+        <a href="/restaurants/{{{restaurant.id}}}/edit" class="btn btn-primary btn-sm">Edit</a>
+        <button type="submit" class="btn btn-danger btn-sm ">Delete</button>
+      </form>
     </div>
   </div>
+
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
 
