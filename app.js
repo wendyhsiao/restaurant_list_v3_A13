@@ -95,7 +95,13 @@ app.post('/restaurants/:restaurant_id', (req, res) => {
 })
 
 app.post('/restaurants/:restaurant_id/delete', (req, res) => {
-  res.send('刪除restaurant')
+  Restaurant.findById(req.params.restaurant_id, (err, item) => {
+    if (err) return console.error(err)
+    item.remove(err => {
+      if (err) return console.error(err)
+      return res.redirect('/')
+    })
+  })
 })
 
 app.get('/search', (req, res) => {
