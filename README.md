@@ -13,7 +13,9 @@
 - body-parser: ^1.19.0
 - express: ^4.17.1
 - express-handlebars: ^3.1.0
+- handlebars: ^4.2.0
 - mongoose: ^5.6.13
+- method-override: ^3.0.0
 
 ## 安裝與執行步驟
 
@@ -22,7 +24,7 @@
 在終端機(Terminal)輸入
 
 ```
-git colone https://github.com/wendyhsiao/restaurant_list_v1_A9.git
+git colone https://github.com/wendyhsiao/restaurant_list_v2_A10.git
 ```
 
 如果在終端機訊息中看見「done」，就表示成功了！
@@ -33,10 +35,10 @@ git colone https://github.com/wendyhsiao/restaurant_list_v1_A9.git
 
 #### 執行步驟
 
-1.在終端機(Terminal)切換到 restaurant_list_v1_A9 目錄下
+1.在終端機(Terminal)切換到 restaurant_list_v2_A10 目錄下
 
 ```
-cd restaurant_list_v1_A9
+cd restaurant_list_v2_A10
 ```
 
 2.安裝套件
@@ -45,13 +47,22 @@ cd restaurant_list_v1_A9
 npm install
 ```
 
-3.使用 nodemon 啟動伺服器
+3.建立種子資料
 
 ```
+cd restaurant_list_v2_A10/models/seeds
+node Seeder.js
+```
+
+4.回到 restaurant_list_v2_A10 目錄下
+使用 nodemon 啟動伺服器
+
+```
+cd restaurant_list_v2_A10
 nodemon app.js
 ```
 
-4.在瀏覽器輸入網址 `localhost:3000`即可看到內容
+5.在瀏覽器輸入網址 `localhost:3000`即可看到內容
 
 ## 功能描述
 
@@ -63,12 +74,16 @@ nodemon app.js
 - 增加編輯按鈕，可修改餐廳資料內容
 - 增加刪除按鈕，可把不想要的餐廳刪除
 
+- 增加排序按鈕，可以按照不同方式排序餐廳
+
 ## 專案畫面
 
-![image](https://github.com/wendyhsiao/restaurant_list_v1_A9/blob/master/public/img/index.PNG)
+![image](https://github.com/wendyhsiao/restaurant_list_v2_A10/blob/master/public/img/index.PNG)
 
-![image](https://github.com/wendyhsiao/restaurant_list_v1_A9/blob/master/public/img/detail.PNG)
+![image](https://github.com/wendyhsiao/restaurant_list_v2_A10/blob/master/public/img/search+sort.PNG)
 
-![image](https://github.com/wendyhsiao/restaurant_list_v1_A9/blob/master/public/img/edit.PNG)
+![image](https://github.com/wendyhsiao/restaurant_list_v2_A10/blob/master/public/img/detail.PNG)
 
-![image](https://github.com/wendyhsiao/restaurant_list_v1_A9/blob/master/public/img/create.PNG)
+![image](https://github.com/wendyhsiao/restaurant_list_v2_A10/blob/master/public/img/edit.PNG)
+
+![image](https://github.com/wendyhsiao/restaurant_list_v2_A10/blob/master/public/img/create.PNG)

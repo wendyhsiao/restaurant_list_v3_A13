@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-// const restaurantList = require('../restaurant.json').results
 const Restaurant = require('../models/restaurant.js')
 const Handlebars = require('handlebars')
 
@@ -11,7 +10,6 @@ Handlebars.registerHelper('ifEquals', function(arg1, options) {
 router.get('/', (req, res) => {
   sortObject = {}
   sortObject[req.query.ref] = req.query.sort
-  console.log('sortObject', sortObject)
 
   Restaurant.find({})
     .sort(sortObject)
@@ -26,3 +24,5 @@ router.get('/', (req, res) => {
       res.render('index', { restaurant, keyword, sort, search })
     })
 })
+
+module.exports = router
