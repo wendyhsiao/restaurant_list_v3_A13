@@ -44,7 +44,7 @@ app.get('/restaurants/new', (req, res) => {
   return res.render('new')
 })
 app.post('/restaurants', (req, res) => {
-  console.log('req.body', req.body)
+  // console.log('req.body', req.body)
   const restaurant = new Restaurant({
     name: req.body.name,
     name_en: req.body.name_en,
@@ -65,16 +65,33 @@ app.post('/restaurants', (req, res) => {
 app.get('/restaurants/:restaurant_id', (req, res) => {
   Restaurant.findById(req.params.restaurant_id, (err, item) => {
     if (err) return console.error(err)
-    // console.log('req.params.body', req.params.restaurant_id)
     return res.render('show', { restaurant: item })
   })
 })
 
 app.get('/restaurants/:restaurant_id/edit', (req, res) => {
-  res.send('修改restaurant頁面')
+  Restaurant.findById(req.params.restaurant_id, (err, item) => {
+    if (err) return console.error(err)
+    return res.render('edit', { restaurant: item })
+  })
 })
-app.get('/restaurants/:restaurant_id', (req, res) => {
-  res.send('修改restaurant')
+app.post('/restaurants/:restaurant_id', (req, res) => {
+  Restaurant.findById(req.params.restaurant_id, (err, item) => {
+    if (err) return console.error(err)
+    item.name = req.body.name
+    item.name_en = req.body.name_en
+    item.category = req.body.category
+    item.image = req.body.image
+    item.location = req.body.location
+    item.phone = req.body.phone
+    item.google_map = req.body.google_map
+    item.rating = req.body.rating
+    item.description = req.body.description
+    item.save(err => {
+      if (err) return console.error(err)
+      return res.redirect(`/restaurants/${req.params.restaurant_id}`)
+    })
+  })
 })
 
 app.post('/restaurants/:restaurant_id/delete', (req, res) => {
