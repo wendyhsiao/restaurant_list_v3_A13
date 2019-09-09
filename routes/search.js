@@ -8,7 +8,7 @@ Handlebars.registerHelper('ifEquals', function(arg1, options) {
 })
 
 router.get('/', (req, res) => {
-  sortObject = {}
+  let sortObject = {}
   sortObject[req.query.ref] = req.query.sort
 
   Restaurant.find({})
