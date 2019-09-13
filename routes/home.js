@@ -1,8 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const Restaurant = require('../models/restaurant.js')
+const { authenticated } = require('../config/auth.js')
 
-router.get('/', (req, res) => {
+router.get('/', authenticated, (req, res) => {
   let sortObject = {}
   sortObject[req.query.ref] = req.query.sort
 

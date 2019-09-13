@@ -10,7 +10,7 @@ module.exports = passport => {
           return done(null, false, { message: 'That email is not registered' })
         }
         if (user.password !== password) {
-          retuen done(null, false, { message: 'Email or Password incorrect' })
+          return done(null, false, { message: 'Email or Password incorrect' })
         }
         return done(null, user)
       })
