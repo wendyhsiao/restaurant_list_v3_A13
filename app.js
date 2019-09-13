@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
 
-mongoose.connect('mongodb://localhost/restaurantV1', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/restaurantV1', { useNewUrlParser: true, useCreateIndex: true })
 const db = mongoose.connection
 
 db.on('error', () => {

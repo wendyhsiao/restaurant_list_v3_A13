@@ -20,7 +20,8 @@ router.post('/', authenticated, (req, res) => {
     phone: req.body.phone,
     google_map: req.body.google_map,
     rating: req.body.rating,
-    description: req.body.description
+    description: req.body.description,
+    userId: req.user._id
   })
   restaurant.save(err => {
     if (err) return console.error(err)
@@ -29,20 +30,20 @@ router.post('/', authenticated, (req, res) => {
 })
 
 router.get('/:restaurant_id', authenticated, (req, res) => {
-  Restaurant.findById(req.params.restaurant_id, (err, item) => {
+  Restaurant.findOne({ _id: req.params.id, userId: req.user._id }, (err, item) => {
     if (err) return console.error(err)
     return res.render('show', { restaurant: item })
   })
 })
 
 router.get('/:restaurant_id/edit', authenticated, (req, res) => {
-  Restaurant.findById(req.params.restaurant_id, (err, item) => {
+  Restaurant.findOne({ _id: req.params.id, userId: req.user._id }, (err, item) => {
     if (err) return console.error(err)
     return res.render('edit', { restaurant: item })
   })
 })
 router.put('/:restaurant_id', authenticated, (req, res) => {
-  Restaurant.findById(req.params.restaurant_id, (err, item) => {
+  Restaurant.findOne({ _id: req.params.id, userId: req.user._id }, (err, item) => {
     if (err) return console.error(err)
     item.name = req.body.name
     item.name_en = req.body.name_en
@@ -61,7 +62,7 @@ router.put('/:restaurant_id', authenticated, (req, res) => {
 })
 
 router.delete('/:restaurant_id/delete', authenticated, (req, res) => {
-  Restaurant.findById(req.params.restaurant_id, (err, item) => {
+  Restaurant.findOne({ _id: req.params.id, userId: req.user._id }, (err, item) => {
     if (err) return console.error(err)
     item.remove(err => {
       if (err) return console.error(err)
