@@ -7,6 +7,7 @@ const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
+const session = require('express-session')
 const Restaurant = require('./models/restaurant.js')
 
 // setting template engine
@@ -28,6 +29,13 @@ db.on('error', () => {
 db.once('open', () => {
   console.log('mongodb connected')
 })
+
+app.use(session({
+  secret: 'your secrete key',
+  resave: false,
+  saveUninitialized: true
+}))
+
 
 // routes setting
 app.use('/', require('./routes/home.js'))
