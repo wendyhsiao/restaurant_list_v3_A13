@@ -10,17 +10,11 @@ router.get('/new', (req, res) => {
   return res.render('new')
 })
 router.post('/', (req, res) => {
-  let img = ''
-  req.body.image == ''
-    ? (img =
-        'https://www.hucc-coop.tw/dispPageBox/hucc/images/nopic_post.jpg?&W=870&H=580')
-    : (img = req.body.image)
-
   const restaurant = new Restaurant({
     name: req.body.name,
     name_en: req.body.name_en,
     category: req.body.category,
-    image: img,
+    image: req.body.image || 'https://www.hucc-coop.tw/dispPageBox/hucc/images/nopic_post.jpg?&W=870&H=580',
     location: req.body.location,
     phone: req.body.phone,
     google_map: req.body.google_map,
