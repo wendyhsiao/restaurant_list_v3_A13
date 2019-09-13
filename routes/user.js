@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Handlebars = require('handlebars')
+const User = require('../models/user.js')
 
 router.get('/login', (req, res) => {
   res.render('login')
