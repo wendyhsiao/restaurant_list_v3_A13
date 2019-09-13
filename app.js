@@ -8,7 +8,9 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const session = require('express-session')
+const passport = require('passport')
 const Restaurant = require('./models/restaurant.js')
+
 
 // setting template engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
@@ -36,6 +38,14 @@ app.use(session({
   saveUninitialized: true
 }))
 
+app.use(passport.initialize())
+app.use(passport.session())
+
+require('./config/passport.js')(passport)
+app.use((req, res, next) => {
+  res.locals.user = req.user
+  next()
+})
 
 // routes setting
 app.use('/', require('./routes/home.js'))
