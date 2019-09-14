@@ -57,6 +57,7 @@ app.use('/restaurants', require('./routes/restaurant.js'))
 app.use('/search', require('./routes/search.js'))
 app.use('/users', require('./routes/user.js'))
 app.use('/auth', require('./routes/auths.js'))
+// app.use('/auth', require('./routes/authsGoogle.js'))
 
 // start and listen on the Express server
 app.listen(port, () => {
