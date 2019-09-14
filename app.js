@@ -1,6 +1,9 @@
 // require packages used in the project
 const express = require('express')
 const app = express()
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 const port = 3000
 // require express-handlebars here
 const exphbs = require('express-handlebars')
@@ -53,6 +56,7 @@ app.use('/', require('./routes/home.js'))
 app.use('/restaurants', require('./routes/restaurant.js'))
 app.use('/search', require('./routes/search.js'))
 app.use('/users', require('./routes/user.js'))
+app.use('/auth', require('./routes/auths.js'))
 
 // start and listen on the Express server
 app.listen(port, () => {
