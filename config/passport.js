@@ -31,10 +31,10 @@ module.exports = passport => {
       callbackURL: process.env.FACEBOOK_CALLBACK,
       profileFields: ['email', 'displayName']
     }, (accessToken, refreshToken, profile, done) => {
-      User.fineOne({ email: profile._json.email })
+      User.findOne({ email: profile._json.email })
         .then(user => {
           if (!user) {
-            let randomPassword = Math.reandom().toString(36).slice(-8)
+            let randomPassword = Math.random().toString(36).slice(-8)
             bcrypt.genSalt(10, (err, salt) => {
               bcrypt.hash(randomPassword, salt, (err, hash) => {
                 const newUser = new User({
@@ -44,10 +44,11 @@ module.exports = passport => {
                 })
 
                 newUser.save().then(user => {
-                  return done(unll, user)
+                  return done(null, user)
                 })
-              }).catch(err => {
-                console.log(RTCPeerConnectionIceErrorEvent)
+                  .catch(err => {
+                    console.log(err)
+                  })
               })
             })
           } else {
