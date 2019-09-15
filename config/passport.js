@@ -66,7 +66,7 @@ module.exports = passport => {
       clientSecret: process.env.GOOGLE_SECRET,
       callbackURL: process.env.GOOGLE_CALLBACK
     }, (accessToken, refreshToken, profile, done) => {
-      User.findOne({ googleId: profile.id }).then(user => {
+      User.findOne({ email: profile._json.email }).then(user => {
         if (!user) {
           let randomPassword = Math.random().toString(36).slice(-8)
           bcrypt.genSalt(10, (err, salt) => {

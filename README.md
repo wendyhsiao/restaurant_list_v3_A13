@@ -9,13 +9,22 @@
 
 #### npm 套件
 
-- nodemon
+- bcryptjs: ^2.4.3
 - body-parser: ^1.19.0
+- connect-flash: ^0.1.1
+- dotenv: ^8.1.0
 - express: ^4.17.1
 - express-handlebars: ^3.1.0
+- express-session: ^1.16.2
 - handlebars: ^4.2.0
-- mongoose: ^5.6.13
 - method-override: ^3.0.0
+- mongoose: ^5.6.13
+- nodemon: ^1.19.2
+- passport: ^0.4.0
+- passport-facebook: ^3.0.0
+- passport-google-oauth: ^2.0.0
+- passport-local: ^1.0.0
+
 
 ## 安裝與執行步驟
 
@@ -24,7 +33,7 @@
 在終端機(Terminal)輸入
 
 ```
-git colone https://github.com/wendyhsiao/restaurant_list_v2_A10.git
+git colone https://github.com/wendyhsiao/restaurant_list_v3_A13.git
 ```
 
 如果在終端機訊息中看見「done」，就表示成功了！
@@ -35,10 +44,10 @@ git colone https://github.com/wendyhsiao/restaurant_list_v2_A10.git
 
 #### 執行步驟
 
-1.在終端機(Terminal)切換到 restaurant_list_v2_A10 目錄下
+1.在終端機(Terminal)切換到 restaurant_list_v3_A13 目錄下
 
 ```
-cd restaurant_list_v2_A10
+cd restaurant_list_v3_A13
 ```
 
 2.安裝套件
@@ -50,15 +59,15 @@ npm install
 3.建立種子資料
 
 ```
-cd restaurant_list_v2_A10/models/seeds
+cd restaurant_list_v3_A13/models/seeds
 node Seeder.js
 ```
 
-4.回到 restaurant_list_v2_A10 目錄下
+4.回到 restaurant_list_v3_A13 目錄下
 使用 nodemon 啟動伺服器
 
 ```
-cd restaurant_list_v2_A10
+cd restaurant_list_v3_A13
 nodemon app.js
 ```
 
@@ -76,7 +85,16 @@ nodemon app.js
 
 - 增加排序按鈕，可以按照不同方式排序餐廳
 
+- 新增註冊及登入頁面
+- 依據不同使用者登入，顯示不同的資料
+
 ## 專案畫面
+
+![image](https://github.com/wendyhsiao/restaurant_list_v3_A13/blob/master/public/img/login.PNG)
+
+![image](https://github.com/wendyhsiao/restaurant_list_v3_A13/blob/master/public/img/register.PNG)
+
+![image](https://github.com/wendyhsiao/restaurant_list_v3_A13/blob/master/public/img/alert.PNG)
 
 ![image](https://github.com/wendyhsiao/restaurant_list_v2_A10/blob/master/public/img/index.PNG)
 
