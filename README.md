@@ -73,6 +73,11 @@ nodemon app.js
 
 5.在瀏覽器輸入網址 `localhost:3000`即可看到內容
 
+6.預設user1使用者  
+姓名: user1  
+Email: user1@gmail.com  
+Password: 0000
+
 ## 功能描述
 
 - 在首頁列出所有的餐廳清單
