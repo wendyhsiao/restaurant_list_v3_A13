@@ -25,7 +25,6 @@
 - passport-google-oauth: ^2.0.0
 - passport-local: ^1.0.0
 
-
 ## 安裝與執行步驟
 
 #### 安裝方法 1
@@ -33,7 +32,7 @@
 在終端機(Terminal)輸入
 
 ```
-git colone https://github.com/wendyhsiao/restaurant_list_v3_A13.git
+git clone https://github.com/wendyhsiao/restaurant_list_v3_A13.git
 ```
 
 如果在終端機訊息中看見「done」，就表示成功了！
@@ -63,8 +62,21 @@ cd restaurant_list_v3_A13/models/seeds
 node Seeder.js
 ```
 
-4.回到 restaurant_list_v3_A13 目錄下
-使用 nodemon 啟動伺服器
+4.建立 Facebook 及 Google 的登入功能
+回到 restaurant_list_v3_A13 目錄下
+在根目錄建立.env 檔案
+
+```
+FACEBOOK_ID=
+FACEBOOK_SECRET=
+FACEBOOK_CALLBACK=
+
+GOOGLE_ID=
+GOOGLE_SECRET=
+GOOGLE_CALLBACK=
+```
+
+5.使用 nodemon 啟動伺服器
 
 ```
 cd restaurant_list_v3_A13
@@ -73,10 +85,16 @@ nodemon app.js
 
 5.在瀏覽器輸入網址 `localhost:3000`即可看到內容
 
-6.預設user1使用者  
-姓名: user1  
-Email: user1@gmail.com  
-Password: 0000
+6.預設兩位使用者
+
+1. 第一位使用者：  
+   email: user1@example.com  
+   password: 12345678  
+   擁有 #1, #2, #3 號餐廳
+2. 第二位使用者：  
+   email: user2@example.com  
+   password: 12345678  
+   擁有 #4, #5, #6 號餐廳
 
 ## 功能描述
 
