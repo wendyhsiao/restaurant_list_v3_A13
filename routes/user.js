@@ -17,7 +17,6 @@ router.post('/login', (req, res, next) => {
   })(req, res, next)
 })
 
-
 router.get('/register', (req, res) => {
   res.render('register')
 })
@@ -27,8 +26,8 @@ router.post('/register', (req, res) => {
 
   let errors = []
 
-  if (!name || !email || !password || !password2) {
-    errors.push({ message: '所有欄位都是必填' })
+  if (!email || !password || !password2) {
+    errors.push({ message: 'Email、Password、Confirm Passwor欄位都是必填' })
   }
 
   if (password !== password2) {
@@ -60,9 +59,11 @@ router.post('/register', (req, res) => {
             if (err) throw err
             newUser.password = hash
 
-            newUser.save().then(user => {
-              res.redirect('/')
-            })
+            newUser
+              .save()
+              .then(user => {
+                res.redirect('/')
+              })
               .catch(err => console.log(err))
           })
         })
@@ -70,7 +71,6 @@ router.post('/register', (req, res) => {
     })
   }
 })
-
 
 router.get('/logout', (req, res) => {
   req.logout()
