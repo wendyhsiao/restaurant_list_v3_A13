@@ -54,8 +54,7 @@ header {
 .bg-i{
   background-image:url('https://image.freepik.com/free-photo/wooden-table-looking-out-restaurant-decoration_23-2147701322.jpg') ;
   background-repeat:no-repeat;
-  background-size:cover;
-  
+  background-size:cover;  
 }
 .col-right {
   float: right;

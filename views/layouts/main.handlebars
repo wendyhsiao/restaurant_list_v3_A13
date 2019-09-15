@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
-<body>
+<body {{#if isAuthenticated}}class="" {{else}}class="bg-i" {{/if}}>
   <header>
     <!-- navigation -->
     <nav class="navbar navbar-light bg-light">

@@ -87,9 +87,9 @@ module.exports = passport => {
         } else {
           return done(null, user);
         }
-      });
-    }
-    ));
+      })
+    })
+  )
 
   passport.serializeUser((user, done) => {
     done(null, user.id)
