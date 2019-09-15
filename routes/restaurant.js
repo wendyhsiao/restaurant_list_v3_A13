@@ -30,20 +30,21 @@ router.post('/', authenticated, (req, res) => {
 })
 
 router.get('/:restaurant_id', authenticated, (req, res) => {
-  Restaurant.findOne({ _id: req.params.id, userId: req.user._id }, (err, item) => {
+  Restaurant.findOne({ _id: req.params.restaurant_id, userId: req.user._id }, (err, item) => {
     if (err) return console.error(err)
     return res.render('show', { restaurant: item })
   })
 })
 
 router.get('/:restaurant_id/edit', authenticated, (req, res) => {
-  Restaurant.findOne({ _id: req.params.id, userId: req.user._id }, (err, item) => {
+  Restaurant.findOne({ _id: req.params.restaurant_id, userId: req.user._id }, (err, item) => {
     if (err) return console.error(err)
+
     return res.render('edit', { restaurant: item })
   })
 })
 router.put('/:restaurant_id', authenticated, (req, res) => {
-  Restaurant.findOne({ _id: req.params.id, userId: req.user._id }, (err, item) => {
+  Restaurant.findOne({ _id: req.params.restaurant_id, userId: req.user._id }, (err, item) => {
     if (err) return console.error(err)
     item.name = req.body.name
     item.name_en = req.body.name_en
@@ -62,7 +63,7 @@ router.put('/:restaurant_id', authenticated, (req, res) => {
 })
 
 router.delete('/:restaurant_id/delete', authenticated, (req, res) => {
-  Restaurant.findOne({ _id: req.params.id, userId: req.user._id }, (err, item) => {
+  Restaurant.findOne({ _id: req.params.restaurant_id, userId: req.user._id }, (err, item) => {
     if (err) return console.error(err)
     item.remove(err => {
       if (err) return console.error(err)

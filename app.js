@@ -12,6 +12,7 @@ const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const session = require('express-session')
 const passport = require('passport')
+const flash = require('connect-flash')
 const Restaurant = require('./models/restaurant.js')
 
 
@@ -43,13 +44,18 @@ app.use(session({
 
 app.use(passport.initialize())
 app.use(passport.session())
-
 require('./config/passport.js')(passport)
+
+app.use(flash())
 app.use((req, res, next) => {
   res.locals.user = req.user
   res.locals.isAuthenticated = req.isAuthenticated()
+
+  res.locals.success_msg = req.flash('success_msg')
+  res.locals.warning_msg = req.flash('warning_msg')
   next()
 })
+
 
 // routes setting
 app.use('/', require('./routes/home.js'))
